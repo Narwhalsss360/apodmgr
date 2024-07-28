@@ -7,7 +7,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d798e31-7a73-49db-ab9a-409819d959f4" name="Changes" comment="" />
+    <list default="true" id="3d798e31-7a73-49db-ab9a-409819d959f4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/apodmgr/set_bg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apodmgr/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/apodmgr/__main__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apodmgr/mgrcfg.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/apodmgr/mgrcfg.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,9 +32,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2jql89eMiiIwpmyfRdbgoavaFL7" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -41,6 +47,7 @@
     "Python.Fetch Today's.executor": "Debug",
     "Python.Generate Default Manager Configuration.executor": "Debug",
     "Python.List Stored.executor": "Debug",
+    "Python.Set Today's As Background.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "dev",
     "ignore.virus.scanning.warn.message": "true",
@@ -53,7 +60,7 @@
       <recent name="C:\Source\Repositories\Narwhalsss360\apodmgr" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.List Stored">
+  <component name="RunManager" selected="Python.Set Today's As Background">
     <configuration name="Download Today's Image" type="PythonConfigurationType" factoryName="Python">
       <module name="apodmgr" />
       <option name="ENV_FILES" value="" />
@@ -146,10 +153,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Set Today's As Background" type="PythonConfigurationType" factoryName="Python">
+      <module name="apodmgr" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12 (apodmgr)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="apodmgr.__main__" />
+      <option name="PARAMETERS" value="set-bg today" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="true" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.Generate Default Manager Configuration" />
       <item itemvalue="Python.Fetch Today's" />
       <item itemvalue="Python.List Stored" />
+      <item itemvalue="Python.Set Today's As Background" />
       <item itemvalue="Python.Download Today's Image" />
     </list>
   </component>

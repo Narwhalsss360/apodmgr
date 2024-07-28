@@ -94,6 +94,9 @@ class ManagerConfiguration:
     def fetch_range(self, *args) -> list[APOD]:
         return self.store_apods(APOD.fetch_range(self.api_key, *args))
 
+    def path_for_media(self, apod: APOD) -> Path:
+        return Path(self.apods_media_path) / f'{apod.date}.{apod.media_extension}'
+
     def save_media_for(self, apod: APOD) -> None:
         file_name: str = f'{apod.date}.{apod.media_extension}'
         for file in listdir(self.apods_media_path):

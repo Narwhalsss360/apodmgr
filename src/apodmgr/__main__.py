@@ -7,6 +7,7 @@ import re
 import json
 from .apod import APOD
 from .mgrcfg import ManagerConfiguration, default_manager_configuration_path
+from .set_bg import set_bg
 
 
 def int_or_none(string: str) -> Optional[int]:
@@ -32,7 +33,7 @@ def fetch(config: ManagerConfiguration):
     if len(argv) == 1:
         if re.match(APOD.APOD_DATE_FORMAT_RE, argv[0]):
             fetcher: Callable = lambda: config.fetch_single(argv[0])
-        elif count := int_or_none(argv[0]):
+        elif (count := int_or_none(argv[0])) is not None:
             fetcher: Callable = lambda: config.fetch_random(count)
         elif argv[0] == 'today':
             fetcher: Callable = lambda: config.fetch_single(None)
@@ -85,6 +86,24 @@ def download_media(config: ManagerConfiguration):
     print(Path(config.apods_media_path) / f'{apod.date}.{apod.media_extension}')
 
 
+def set_background(config: ManagerConfiguration):
+    if not argv:
+        print(DOWNLOAD_MEDIA_HELP_MSG)
+        return
+    date: str = argv.pop(0)
+    if date == 'today':
+        date: str = datetime.now().strftime(APOD.APOD_DATE_FORMATTER)
+    if (apod_file_name := config.stored_apod_file(date)) is None:
+        print(f'Haven\'t fetched {date} yet...')
+        return
+    media_path: Path = config.path_for_media(APOD.load_from(Path(config.apods_path) / apod_file_name))
+    if not media_path.exists():
+        print(f'Haven\'t downloaded media for {date} yet...')
+        return
+    set_bg(media_path)
+    print(media_path)
+
+
 def mkcfg():
     path = default_manager_configuration_path()
     if path.exists():
@@ -123,7 +142,8 @@ def main():
     commands: dict[str, Callable[[ManagerConfiguration], None]] = {
         'fetch': fetch,
         'list': list_apods,
-        'download': download_media
+        'download': download_media,
+        'set-bg': set_background
     }
 
     if command not in commands:

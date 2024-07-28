@@ -41,6 +41,16 @@
         "download",
         "today"
       ]
+    },
+    {
+      "name": "apodmgr: Set Background As Today's",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "apodmgr",
+      "args": [
+        "set-bg",
+        "today"
+      ]
     }
   ]
 }
