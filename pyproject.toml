@@ -5,11 +5,11 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "apodmgr"
 authors = [
-    {name = "Franklyn Vasquez", email = "franklynvasquez24@gmail.com"},
+    { name = "Franklyn Vasquez", email = "franklynvasquez24@gmail.com" },
 ]
 description = "Manage NASA APODs"
 readme = "README.md"
-license = {text = "MIT"}
+license = { text = "MIT" }
 classifiers = [
     "Programming Language :: Python :: 3",
 ]

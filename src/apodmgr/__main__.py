@@ -100,6 +100,7 @@ def mkcfg():
 
 
 def main():
+    argv.pop(0)
     if not argv:
         print('Must specify a command')
         return
@@ -116,6 +117,7 @@ def main():
     if not default_manager_configuration_path().exists():
         print(f'{default_manager_configuration_path()} not found')
         return
+
     config: ManagerConfiguration = ManagerConfiguration.load_from(default_manager_configuration_path())
 
     commands: dict[str, Callable[[ManagerConfiguration], None]] = {
@@ -123,12 +125,17 @@ def main():
         'list': list_apods,
         'download': download_media
     }
+
     if command not in commands:
-        print(f'Must specify a valid command: {commands.keys()}')
+        print(f'Must specify a valid command:')
+        for command in no_cfg_commands:
+            print(command)
+        for command in commands:
+            print(command)
         return
+
     commands[command](config)
 
 
 if __name__ == '__main__':
-    argv.pop(0)
     main()

@@ -23,6 +23,7 @@ def default_apods_media_dir() -> str:
 def default_manager_configuration_path() -> Path:
     return Path(default_apods_dir()) / "apodmgr.cfg.json"
 
+
 @dataclass
 class ManagerConfiguration:
     api_key: str
